@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .auth-buttons {
+            margin-bottom: 20px;
+        }
+        .auth-buttons a, .client-actions a {
+            padding: 10px 15px;
+            margin: 5px;
+            background: #ff0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .auth-buttons a:hover, .client-actions a:hover {
+            background: #000000;
+        }
+        .client-actions {
+            display: none;
+        }
+    </style>
+    <script>
+        function showClientActions() {
+            document.getElementById('client-actions').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <aside>
+        <h2>Aceicar</h2>
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="facturacion.html">Facturación</a></li>
+            <li><a href="clientes.html">Clientes</a></li>
+            <li><a href="inventario.html">Inventario</a></li>
+            <li><a href="reportes.html">Reportes</a></li>
+            <li><a href="configuracion.html">Configuración</a></li>
+        </ul>
+    </aside>
+    <main>
+        <h2>Clientes</h2>
+        <div class="auth-buttons">
+            <a href="login.html">Iniciar Sesión</a>
+            <a href="register.html">Registrarse</a>
+        </div>
+    </main>
+</body>
+</html>

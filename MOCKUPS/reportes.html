@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: white;
+        }
+        aside {
+            width: 250px;
+            background: #242424;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            height: 100%;
+        }
+        aside h2 {
+            text-align: center;
+        }
+        aside ul {
+            list-style: none;
+            padding: 0;
+        }
+        aside li {
+            padding: 15px;
+            cursor: pointer;
+        }
+        aside li:hover {
+            background: #8b0000;
+        }
+        aside a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        main {
+            margin-left: 270px;
+            padding: 20px;
+        }
+        h2 {
+            color: #b00000;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #333;
+            color: white;
+        }
+        table, th, td {
+            border: 1px solid #8b0000;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #b00000;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <aside>
+        <h2>Reportes</h2>
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="clientes.html">Clientes</a></li>
+            <li><a href="inventario.html">Inventario</a></li>
+            <li><a href="facturacion.html">Facturación</a></li>
+        </ul>
+    </aside>
+    <main>
+        <h2>Reporte de Inventario</h2>
+        <table>
+            <tr>
+                <th>Tipo de Producto</th>
+                <th>Cantidad en Stock</th>
+                <th>Cantidad Vendida</th>
+                <th>Precio</th>
+                <th>Última Venta</th>
+            </tr>
+            <tr>
+                <td>Aceite</td>
+                <td>100</td>
+                <td>30</td>
+                <td>$50,000</td>
+                <td>01/04/2025 14:30</td>
+            </tr>
+        </table>
+
+        <h2>Reporte de Ventas</h2>
+        <table>
+            <tr>
+                <th>Cliente</th>
+                <th>Cédula</th>
+                <th>Teléfono</th>
+                <th>Producto Comprado</th>
+                <th>Cantidad</th>
+                <th>Precio Total</th>
+                <th>Fecha y Hora</th>
+            </tr>
+            <tr>
+                <td>Juan Pérez</td>
+                <td>123456789</td>
+                <td>3100000000</td>
+                <td>Aceite</td>
+                <td>2</td>
+                <td>$100,000</td>
+                <td>01/04/2025 14:30</td>
+            </tr>
+        </table>
+
+        <h2>Reporte de Quejas</h2>
+        <table>
+            <tr>
+                <th>Cliente</th>
+                <th>Queja</th>
+                <th>Estado</th>
+                <th>Fecha</th>
+            </tr>
+            <tr>
+                <td>María López</td>
+                <td>El producto llegó dañado</td>
+                <td>Pendiente</td>
+                <td>01/04/2025</td>
+            </tr>
+        </table>
+    </main>
+</body>
+</html>

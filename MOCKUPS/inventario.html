@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+        }
+        aside {
+            width: 250px;
+            background: #333;
+            color: white;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            padding: 15px;
+            cursor: pointer;
+        }
+        li:hover {
+            background: #555;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <aside>
+        <h2>Aceicar</h2>
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="facturacion.html">Facturación</a></li>
+            <li><a href="clientes.html">Clientes</a></li>
+            <li><a href="inventario.html">Inventario</a></li>
+            <li><a href="reportes.html">Reportes</a></li>
+            <li><a href="configuracion.html">Configuración</a></li>
+        </ul>
+    </aside>
+    <main>
+        <h2>Inventario Principal</h2>
+        <table id="tablaInventario">
+            <thead>
+                <tr>
+                    <th>Tipo de Producto</th>
+                    <th>Cantidad en Stock</th>
+                    <th>Cantidad Vendida</th>
+                    <th>Precio</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Aceite 10W-40</td>
+                    <td>50</td>
+                    <td>0</td>
+                    <td>$30,000</td>
+                    <td>01/04/2025</td>
+                    <td>12:00 PM</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Ventas Registradas</h2>
+        <table id="tablaVentas">
+            <thead>
+                <tr>
+                    <th>Nombre del Cliente</th>
+                    <th>Cédula</th>
+                    <th>Teléfono</th>
+                    <th>Tipo de Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio Total</th>
+                    <th>Tipo de Carro</th>
+                    <th>Kilometraje</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se llenarán los datos con JS -->
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        function registrarVenta(nombre, cedula, telefono, producto, cantidad, precio, carro, km) {
+            let fecha = new Date();
+            let fechaFormateada = fecha.toLocaleDateString();
+            let horaFormateada = fecha.toLocaleTimeString();
+
+            // Agregar la venta a la tabla de ventas
+            let tablaVentas = document.getElementById("tablaVentas").getElementsByTagName("tbody")[0];
+            let filaVenta = tablaVentas.insertRow();
+            filaVenta.innerHTML = `
+                <td>${nombre}</td>
+                <td>${cedula}</td>
+                <td>${telefono}</td>
+                <td>${producto}</td>
+                <td>${cantidad}</td>
+                <td>$${precio * cantidad}</td>
+                <td>${carro}</td>
+                <td>${km} km</td>
+                <td>${fechaFormateada}</td>
+                <td>${horaFormateada}</td>
+            `;
+
+            // Actualizar el inventario
+            let tablaInventario = document.getElementById("tablaInventario").getElementsByTagName("tbody")[0];
+            for (let fila of tablaInventario.rows) {
+                if (fila.cells[0].innerText === producto) {
+                    let stockActual = parseInt(fila.cells[1].innerText);
+                    let vendidosActual = parseInt(fila.cells[2].innerText);
+
+                    fila.cells[1].innerText = stockActual - cantidad;  // Restar del stock
+                    fila.cells[2].innerText = vendidosActual + cantidad;  // Sumar a vendidos
+                    fila.cells[4].innerText = fechaFormateada;  // Actualizar fecha
+                    fila.cells[5].innerText = horaFormateada;  // Actualizar hora
+                    break;
+                }
+            }
+        }
+
+        // Simulación de una venta (Esto se haría con un formulario en facturación.html)
+        setTimeout(() => {
+            registrarVenta("Juan Pérez", "12345678", "3012345678", "Aceite 10W-40", 3, 30000, "Toyota Corolla", 50000);
+        }, 2000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facturación Electrónica - Aceicar</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: white;
+            display: flex;
+        }
+        aside {
+            width: 250px;
+            background: #333232;
+            color: white;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            padding: 15px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        li:hover {
+            background: #e91010;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+        .crear-factura {
+            width: 500px;
+            margin: auto;
+            padding: 20px;
+            background: #c21313;
+            box-shadow: 0 0 10px rgba(238, 235, 235, 0.5);
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ebe3e3;
+            background-color: #000000;
+            color: white;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #000000;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #8b0000;
+        }
+    </style>
+</head>
+<body>
+    <aside>
+        <h2>Aceicar</h2>
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="facturacion.html">Facturación</a></li>
+            <li><a href="clientes.html">Clientes</a></li>
+            <li><a href="inventario.html">Inventario</a></li>
+            <li><a href="reportes.html">Reportes</a></li>
+            <li><a href="configuracion.html">Configuración</a></li>
+        </ul>
+    </aside>
+    <main>
+        <h2>Facturación</h2>
+        <div class="crear-factura">
+            <h3>Crear Factura</h3>
+            <form>
+                <input type="text" placeholder="Nombre del Cliente" required>
+                <input type="text" placeholder="Cédula" required>
+                <input type="email" placeholder="Correo Electrónico" required>
+                <input type="text" placeholder="Tipo de Carro" required>
+                <input type="text" placeholder="Placa" required>
+                <select required>
+                    <option value="">Seleccione Tipo de Aceite</option>
+                    <option value="Aceite 10W-40">Aceite 10W-40</option>
+                    <option value="Aceite 5W-30">Aceite 5W-30</option>
+                    <option value="Aceite 15W-50">Aceite 15W-50</option>
+                </select>
+                <input type="number" placeholder="Cantidad" required>
+                <input type="text" placeholder="Precio Total" readonly>
+                <button type="submit">Generar Factura</button>
+                <button type="button">Corregir Factura</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
+
+

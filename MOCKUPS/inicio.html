@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aceicar</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: white;
+            display: flex;
+        }
+        aside {
+            width: 250px;
+            background: #3d3d3d;
+            color: white;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            padding: 15px;
+            cursor: pointer;
+        }
+        li:hover {
+            background: #8b0000;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+        .auth-buttons a, .client-actions a {
+            padding: 10px 15px;
+            margin: 5px;
+            background: #b00000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .auth-buttons a:hover, .client-actions a:hover {
+            background: #8b0000;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #b00000;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #8b0000;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <aside>
+        <h2>Aceicar</h2>
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="facturacion.html">Facturación</a></li>
+            <li><a href="clientes.html">Clientes</a></li>
+            <li><a href="inventario.html">Inventario</a></li>
+            <li><a href="reportes.html">Reportes</a></li>
+            <li><a href="configuracion.html">Configuración</a></li>
+        </ul>
+    </aside>
+    <main>
+        <h2>Inicio</h2>
+        <p>Bienvenido a Aceicar. Gestione su facturación y clientes de manera eficiente.</p>
+    </main>
+</body>
+</html>
